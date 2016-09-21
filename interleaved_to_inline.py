@@ -43,7 +43,7 @@ def apply_chords_to_text(chords, text):
 def main():
     sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout.detach())
     sys.stdin = codecs.getreader(locale.getpreferredencoding())(sys.stdin.detach())
-    interleaved = [x.strip() for x in sys.stdin.readlines()]
+    interleaved = [x.rstrip() for x in sys.stdin.readlines()]
     #for line in interleaved:
     #    print(categorize_line(line), line)
     print(apply_chords_to_text(interleaved[2], interleaved[3]))
